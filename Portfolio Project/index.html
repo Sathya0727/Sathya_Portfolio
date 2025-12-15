@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-<!-- <div class="animation1"> -->
+ <!-- YOUR EXACT ORIGINAL HTML - Only added hamburger button -->
     <div class="blue-container">
         <div class="logodiv">
           <h1>Portfolio</h1>
         </div>
+        
+        <!-- Added hamburger button -->
+        <button class="hamburger-btn" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <div class="menudiv">
           <ul>
             <li><a href="#home" class="home">Home</a></li>
             <li>
-              <a href="#about">About &#x25be</a>
+              <a href="#about" class="dropdown-toggle">About &#x25be;</a>
               <ul class="dropdown-content">
                 <li><a href="#Education">Education</a></li>
                 <li><a href="#experince">Experience</a></li>
@@ -28,7 +36,53 @@
           </ul>
         </div>
       </div>
-    <!-- </div> -->
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const menuDiv = document.querySelector('.menudiv');
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            // Toggle mobile menu
+            hamburgerBtn.addEventListener('click', function() {
+                menuDiv.classList.toggle('active');
+            });
+            
+            // Handle dropdowns on mobile
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = this.nextElementSibling;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside (mobile only)
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!menuDiv.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                        menuDiv.classList.remove('active');
+                        // Also close any open dropdowns
+                        document.querySelectorAll('.dropdown-content.active').forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+            
+            // Close menu when clicking a link (mobile only)
+            document.querySelectorAll('.menudiv a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        menuDiv.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
     
 <!-------------------------Her0 section------------------------>   
 <section class="home" id="home">
@@ -100,7 +154,6 @@
 </div>
 </div> 
 </section>
-
 <!--------------------- About----------------- -->
 <section class="about" id="about">
  <div class="about">
@@ -439,4 +492,5 @@
     <h3>sathya</h3>
 </div>
 </body>
+
 </html>
