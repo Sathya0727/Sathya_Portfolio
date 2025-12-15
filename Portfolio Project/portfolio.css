@@ -698,8 +698,7 @@ z-index:1;
     .herosection .Stroke h3 {
         font-size: 1.8rem;
     }
-          }
-/*-------------------- ------------------------About------------------------------------- */
+}/*-------------------- ------------------------About------------------------------------- */
 .about{
     display: flex;
     justify-content: center;
@@ -726,6 +725,7 @@ z-index:1;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto; /* ADDED: This centers the image div */
 }
 .about .about-image img{
     width: 100%;
@@ -734,42 +734,8 @@ z-index:1;
     border: .2rem solid var(--main-color);
 }
 
-/* ----------About Keyframes1--------------- */
-/* .about-image .circle{
-    position: absolute;
-    transform: translate(-50%,-50%) rotate(0);
-    width: 110%;
-    height: 110%;
-    border-radius: 50%;
-    border-top: .4rem solid transparent;
-    border-bottom: .4rem solid transparent;
-    border-left: .4rem solid var(--main-color);
-    border-right: .4rem solid var(--main-color);
-    animation-name: circle;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-    transform-origin: center;
-    color: blue;
-    font-size: 90px;
-    
-  
-  }
-  
-  @keyframes circle {
-    0%{
-      -webkit-transform:rotate(0deg) ;
-    }
-   
-  100% {
-      -webkit-transform: rotate(360deg);
-    }
-  } */
-
-
-
-  /* ------------About Animation 2-------- */
-  .about-image .circle {
+/* ------------About Animation 2-------- */
+.about-image .circle {
     position: absolute;
     transform: translate(-50%, -50%);
     width: 110%;
@@ -782,71 +748,31 @@ z-index:1;
     border-right: 0.4rem solid var(--main-color);
     animation: rotate-circle 10s linear infinite, shadow-effect 10s ease-in-out infinite;
     transform-origin: center;
-  }
+}
   
-  @keyframes rotate-circle {
+@keyframes rotate-circle {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg); 
+        transform: rotate(360deg); 
     }
-  }
+}
   
-  @keyframes shadow-effect {
+@keyframes shadow-effect {
     0% {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-      filter: brightness(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        filter: brightness(1);
     }
     50% {
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
-      filter: brightness(0.8); 
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+        filter: brightness(0.8); 
     }
     100% {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-      filter: brightness(1); 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        filter: brightness(1); 
     }
-  }
-    
-   
-
-   
-  /* -------------------About Second Keyframes---------------- */
-
-
-  /* .about-image .circle {
-  position: absolute;
-  transform: translate(-50%, -50%); 
-  width: 110%;
-  height: 110%;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
-
-.about-image .circle::before,
-.about-image .circle::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color:  var(--main-color)); Create the gradient
-  animation: rotate-animation 10s linear infinite; 
-}
-
-.about-image .circle::after {
-  animation-delay: -5s; 
-
-@keyframes rotate-animation {
-
-  100% {
-    transform: rotate(360deg); 
-  }
-}
-} */
 
 .about-content h3{
     margin-top: 60px;
@@ -910,139 +836,555 @@ z-index:1;
     border:2px solid var(--main-color);
 }
 
+/* ===================== RESPONSIVE FOR TABLET & MOBILE ONLY ===================== */
+
+/* For Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .about {
+        padding: 60px 40px;
+        gap: 40px;
+    }
+    
+    .about h2 {
+        font-size: 36px;
+    }
+    
+    .about-content h3 {
+        font-size: 42px;
+        margin-top: 40px;
+    }
+    
+    .about-content p {
+        font-size: 1.4rem;
+        padding: 1.5rem;
+        line-height: 1.6;
+        display: block;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .about .about-image {
+        width: 12rem;
+        height: 12rem;
+        margin: 0 auto; /* Keep centered */
+    }
+    
+    .about-image .circle {
+        width: 120%;
+        height: 120%;
+    }
+    
+    .about .btn-box {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 20px auto 0;
+    }
+    
+    .btn-box .btn {
+        width: 100%;
+        height: auto;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        justify-content: center;
+    }
+}
+
+/* For Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .about {
+        padding: 50px 30px;
+        gap: 30px;
+    }
+    
+    .about h2 {
+        font-size: 32px;
+    }
+    
+    .about-content h3 {
+        font-size: 36px;
+        margin-top: 30px;
+    }
+    
+    .about-content p {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        line-height: 1.6;
+        max-width: 95%;
+    }
+    
+    .about .about-image {
+        width: 11rem;
+        height: 11rem;
+        margin: 0 auto; /* Keep centered */
+    }
+    
+    .about-image .circle {
+        width: 115%;
+        height: 115%;
+    }
+    
+    .about .btn-box {
+        max-width: 280px;
+    }
+    
+    .btn-box .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+}
+
+/* For Mobile Large (max-width: 600px) */
+@media (max-width: 600px) {
+    .about {
+        padding: 40px 20px;
+        gap: 25px;
+    }
+    
+    .about h2 {
+        font-size: 28px;
+    }
+    
+    .about-content h3 {
+        font-size: 32px;
+        margin-top: 25px;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+        line-height: 1.6;
+    }
+    
+    .about .about-image {
+        width: 10rem;
+        height: 10rem;
+        margin: 0 auto; /* Keep centered */
+    }
+    
+    .about-image .circle {
+        width: 112%;
+        height: 112%;
+    }
+    
+    .about .btn-box {
+        max-width: 250px;
+    }
+    
+    .btn-box .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+/* For Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+    .about {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+    
+    .about h2 {
+        font-size: 26px;
+    }
+    
+    .about-content h3 {
+        font-size: 28px;
+        margin-top: 20px;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        line-height: 1.5;
+    }
+    
+    .about .about-image {
+        width: 9rem;
+        height: 9rem;
+        margin: 0 auto; /* Keep centered */
+    }
+    
+    .about-image .circle {
+        width: 110%;
+        height: 110%;
+        border-width: 0.3rem;
+    }
+    
+    .about-image img {
+        border-width: 0.15rem;
+    }
+    
+    .about .btn-box {
+        max-width: 220px;
+    }
+    
+    .btn-box .btn {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+        height: auto;
+    }
+}
+
+/* For Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .about {
+        padding: 25px 10px;
+        gap: 15px;
+    }
+    
+    .about h2 {
+        font-size: 24px;
+    }
+    
+    .about-content h3 {
+        font-size: 26px;
+        margin-top: 15px;
+    }
+    
+    .about-content p {
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+        line-height: 1.5;
+    }
+    
+    .about .about-image {
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto; /* Keep centered */
+    }
+    
+    .about-image .circle {
+        width: 108%;
+        height: 108%;
+        border-width: 0.25rem;
+    }
+    
+    .about .btn-box {
+        max-width: 200px;
+    }
+    
+    .btn-box .btn {
+        padding: 9px 20px;
+        font-size: 0.85rem;
+    }
+}
 
 
 /* --------------------------------------Education--------------------------------------------------- */
+/* Education Section */
+        .Education {
+            background-color: black;
+            padding: 40px 15px;
+            border-bottom: 1px solid white;
+            z-index: 10;
+        }
 
-.Education {
-  background-color: black;
-  padding: 40px 15px;
-  border-bottom: 1px solid white;
-  z-index: 10;
-}
+        .Education h2 {
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 4rem;
+            text-align: center;
+            color: white;
+        }
 
-.Education h2 {
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  margin-bottom: 4rem;
-  text-align: center;
-  color: white;
-  /* background-color: #ff0000; */
-}
+        .Education .heading span {
+            position: relative;
+            bottom: 7px;
+            color: var(--main-color);
+            font-size: 3rem;
+        }
 
-.Education .heading span {
-  position: relative;
-  bottom: 7px;
-  color: var(--main-color);
-  font-size: 3rem;
-}
+        .timeline-items {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
-.timeline-items {
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+        .timeline-items::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            background-color: var(--main-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.timeline-items::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  background-color: var(--main-color);
-  left: 50%;
-  transform: translateX(-50%);
-}
+        .timeline-item {
+            max-width: 100%;
+            margin-bottom: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
 
-.timeline-item {
-  max-width: 100%;
-  margin-bottom: 40px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            padding-right: calc(50% + 30px); 
+            text-align: right;
+        }
 
-.timeline-item:nth-child(odd) {
-  flex-direction: row-reverse;
-  padding-right: calc(50% + 30px); 
-  text-align: right;
-}
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 30px); 
+        }
 
-.timeline-item:nth-child(even) {
-  padding-left: calc(50% + 30px); 
-}
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
+        .timeline-dot {
+            height: 21px;
+            width: 21px;
+            background-color: var(--main-color);
+            box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            top: 10px;
+        }
 
-.timeline-dot {
-  height: 21px;
-  width: 21px;
-  background-color: var(--main-color);
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  top: 10px;
-}
+        .timeline-date {
+            font-size: 15px;
+            font-weight: 800;
+            color: white;
+            margin: 6px 0 110px;
+        }
 
-.timeline-date {
-  font-size: 15px;
-  font-weight: 800;
-  color:white;
-  margin: 6px 0 110px;
-}
+        .timeline-content {
+            border: 3px solid var(--main-color);
+            padding: 20px 50px;
+            border-radius: 2.5rem;
+            box-shadow: 0 0 10px var(--main-color);
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
 
-.timeline-content {
-  /* background-color: pink; */
-  border: 3px solid var(--main-color);
-  padding: 20px 50px;
-  border-radius: 2.5rem;
-  box-shadow: 0 0 10px var(--main-color);
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--main-color);
+        }
 
-.timeline-content:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--main-color);
-}
+        .timeline-content h3 {
+            font-size: 20px;
+            color: var(--main-color);
+            margin: 0 0 10px;
+            font-weight: 900;
+        }
 
-.timeline-content h3 {
-  font-size: 20px;
-  color: var(--main-color);
-  /* color: white; */
-  margin: 0 0 10px;
-  font-weight: 900;
-}
+        .timeline-content p {
+            color: white;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 22px;
+        }
 
-.timeline-content p {
-  color: white;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 22px;
-}
-/* ------------------------------SCROL BAR--------------------------   */
- ::-webkit-scrollbar{
-  width: 15px;
-}
-::-webkit-scrollbar-thumb{
-  background-color: var(--main-color);
-  /* opacity: 10px; */
-}
- ::-webkit-scrollbar-track{
-  background-color: white;
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: white;
+        }
 
-}  
+        /* ================= ONLY MOBILE & TABLET RESPONSIVE ================= */
 
+        /* For Tablets (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .Education {
+                padding: 30px 15px;
+            }
+            
+            .Education h2 {
+                font-size: 35px;
+                margin-bottom: 3rem;
+            }
+            
+            .Education .heading span {
+                font-size: 2.8rem;
+                bottom: 6px;
+            }
+            
+            .timeline-content {
+                padding: 18px 40px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 18px;
+            }
+            
+            .timeline-content p {
+                font-size: 15px;
+            }
+        }
 
+        /* For Tablets (max-width: 768px) - Switch to vertical timeline */
+        @media (max-width: 768px) {
+            .timeline-items::before {
+                left: 30px; /* Move timeline to left side */
+            }
+            
+            .timeline-dot {
+                left: 30px; /* Move dots to left side */
+            }
+            
+            .timeline-item {
+                flex-direction: row; /* Force vertical layout */
+                padding-left: 70px !important; /* Add space for timeline */
+                padding-right: 20px !important;
+                text-align: left !important;
+                width: 100%;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                flex-direction: row !important;
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+                text-align: left !important;
+                padding-right: 0 !important;
+            }
+            
+            .timeline-item:nth-child(even) {
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+                padding-left: 70px !important;
+            }
+            
+            .timeline-content {
+                width: 100%; /* Full width on mobile */
+                padding: 15px 25px;
+                margin-bottom: 10px;
+            }
+            
+            .timeline-date {
+                position: absolute;
+                left: 70px;
+                top: -25px;
+                margin: 0;
+                font-size: 14px;
+            }
+            
+            .Education h2 {
+                font-size: 32px;
+                margin-bottom: 2.5rem;
+            }
+        }
 
+        /* For Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .Education {
+                padding: 25px 10px;
+            }
+            
+            .Education h2 {
+                font-size: 28px;
+                margin-bottom: 2rem;
+            }
+            
+            .Education .heading span {
+                font-size: 2.2rem;
+                bottom: 5px;
+            }
+            
+            .timeline-items::before {
+                left: 20px;
+                width: 4px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+                height: 16px;
+                width: 16px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px !important;
+                padding-right: 10px !important;
+                margin-bottom: 35px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 50px !important;
+                padding-right: 10px !important;
+            }
+            
+            .timeline-date {
+                left: 50px;
+                top: -22px;
+                font-size: 12px;
+            }
+            
+            .timeline-content {
+                padding: 12px 18px;
+                border-radius: 2rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 16px;
+            }
+            
+            .timeline-content p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        /* For Small Mobile (max-width: 360px) */
+        @media (max-width: 360px) {
+            .Education h2 {
+                font-size: 26px;
+            }
+            
+            .Education .heading span {
+                font-size: 2rem;
+            }
+            
+            .timeline-items::before {
+                left: 18px;
+            }
+            
+            .timeline-dot {
+                left: 18px;
+                height: 14px;
+                width: 14px;
+            }
+            
+            .timeline-item {
+                padding-left: 45px !important;
+                margin-bottom: 30px;
+            }
+            
+            .timeline-date {
+                left: 45px;
+                font-size: 11px;
+            }
+            
+            .timeline-content {
+                padding: 10px 15px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 15px;
+            }
+            
+            .timeline-content p {
+                font-size: 13px;
+                line-height: 18px;
+            }
+        }
 
 /* ------------------------------------------SKILLS---------------------------------------------------- */
 .skills {
@@ -1771,5 +2113,4 @@ color: var(--main-color);
             opacity: 1; 
           }
         }
-
          */
