@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <!-- YOUR EXACT ORIGINAL HTML - Only added hamburger button -->
+
     <div class="blue-container">
         <div class="logodiv">
           <h1>Portfolio</h1>
         </div>
-        
-        <!-- Added hamburger button -->
+    
         <button class="hamburger-btn" id="hamburgerBtn">
             <span></span>
             <span></span>
@@ -37,19 +36,17 @@
         </div>
       </div>
 
-    <!-- JavaScript for mobile menu -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const menuDiv = document.querySelector('.menudiv');
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
             
-            // Toggle mobile menu
+        
             hamburgerBtn.addEventListener('click', function() {
                 menuDiv.classList.toggle('active');
             });
             
-            // Handle dropdowns on mobile
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
@@ -60,12 +57,11 @@
                 });
             });
             
-            // Close menu when clicking outside (mobile only)
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     if (!menuDiv.contains(e.target) && !hamburgerBtn.contains(e.target)) {
                         menuDiv.classList.remove('active');
-                        // Also close any open dropdowns
+        
                         document.querySelectorAll('.dropdown-content.active').forEach(dropdown => {
                             dropdown.classList.remove('active');
                         });
@@ -73,7 +69,6 @@
                 }
             });
             
-            // Close menu when clicking a link (mobile only)
             document.querySelectorAll('.menudiv a').forEach(link => {
                 link.addEventListener('click', function() {
                     if (window.innerWidth <= 768) {
@@ -93,13 +88,12 @@
     </div>
     <div class="ani3">
     <div class="Stroke">
-        <!-- <h3><span class="first-line">Java Fullstack</span><br><span class="second-line">Developer</span></h3> -->
         <h3>Java Fullstack <br> Developer</h3>
     </div>
     <br>
 </div>
 <div class="ani4">
-    <p>Enthusiastic and highly motivated Java Full Stack Developer<br>seeking to contribute skills in Java, front-end technologies,<br> and database management to build innovative and scalable<br> web applications.</p>
+    <p>Enthusiastic and highly motivated Java Full Stack Developer <br>seeking to contribute skills in Java, front-end technologies,<br> and database management to build innovative and scalable<br> web applications.</p>
 <br>
 </div>
 <div class="ani5">
@@ -165,7 +159,7 @@
 </div>
 <div class="about-content">
     <h3>Java Fullstack Developer</h3>
-    <p>As a B.Com CA graduate with a year of hands-on experience at Titan Corporate Industry, I bring a unique blend of technical and business expertise. Proficient in Java Full Stack development, Advanced Excel, Power Automate, and Tally Prime, I have successfully contributed to process automation, financial reporting, and system troubleshooting within a fast-paced corporate environment. My strong problem-solving abilities, coupled with a keen interest in learning new skills and technologies, have enabled me to consistently deliver innovative solutions. Additionally, I have a solid foundation in tools like Adobe Photoshop and System Assembly, allowing me to contribute to both technical and creative tasks. I am passionate about continuous improvement and thrive on developing efficient solutions to complex challenges.</p></div>
+    <p>As a B.Com (Computer Applications) graduate with one year of hands-on corporate experience at Titan Corporate Industry, I bring a unique fusion of financial insight and technical expertise, specializing in Java Full Stack Development with proficiency in Spring Boot and React.js for backend and frontend solutions. My skill set extends to Advanced Excel, Power Automate, and Tally Prime, which I’ve applied to automate workflows, streamline financial reporting, and enhance operational efficiency. I have successfully developed and deployed real-world projects including a complete e-commerce platform using Spring Boot and React.js, an interactive sales analytics dashboard with Vite and Chart.js for data visualization, and a fully responsive portfolio website using HTML, CSS, and JavaScript. Additionally, my experience with Adobe Photoshop and system assembly allows me to contribute to both creative and technical tasks. I am a proactive problem-solver with a strong aptitude for learning new technologies and a passion for building efficient, scalable solutions that bridge business needs with technical execution.</p></div>
 <div class="btn-box">
     <a href="" class="btn">READ MORE</a>
 </div>
@@ -193,7 +187,7 @@
                 <div class="timeline-date">2018-2020</div>
                 <div class="timeline-content">
                     <h3>HSC</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>RV Govt Boys Higher Secondary School</p>
                 </div>
             </div>
 
@@ -202,16 +196,16 @@
                 <div class="timeline-date">2022-2023</div>
                 <div class="timeline-content">
                     <h3>PERIYAR UNIVERSITY</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Govt Arts & Science College , Mathigiri.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2024-2025</div>
+                <div class="timeline-date">SEP'2023-PRESENT</div>
                 <div class="timeline-content">
-                    <h3>TITAN</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <h3>TITAN JEW | TEAL ENG</h3>
+                    <p>After Sales & Service | Nova-Purchase.</p>
                 </div>
             </div>
         </div>
@@ -221,7 +215,6 @@
     <h2 class="heading">My<span> Skills</span></h2>
 
     <div class="skills-row">
-        <!-- Front End Skills Section -->
         <div class="skills-column">
             <h3 class="title">Front End Language</h3>
             <div class="skills-box">
@@ -288,7 +281,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Fixed 300px Container Below -->
             <div class="skill-container-below">
                 <div class="skill-icon">
                     <i class="fa-brands fa-html5"></i>
@@ -298,7 +290,6 @@
             </div>
         </div>
 
-        <!-- Back End Skills Section -->
         <div class="skills-column">
             <h3 class="title">Back End Language</h3>
             <div class="skills-box">
@@ -337,7 +328,7 @@
                         <h3>
                             <div class="skill-name-container">
                                 <i class="fa-brands fa-java"></i>
-                                <span>Advanced Java</span>
+                                <span>SpringBoot</span>
                             </div>
                             <span>90%</span>
                         </h3>
@@ -365,7 +356,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Fixed 300px Container Below -->
             <div class="skill-container-below">
                 <div class="skill-icon">
                     <i class="fa-solid fa-server"></i>
@@ -375,7 +365,6 @@
             </div>
         </div>
 
-        <!-- Professional Skills Section -->
         <div class="skills-column">
             <h3 class="title">Professional Skills</h3>
             <div class="skills-box">
@@ -442,7 +431,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Fixed 300px Container Below -->
             <div class="skill-container-below">
                 <div class="skill-icon">
                     <i class="fas fa-chart-line"></i>
@@ -471,11 +459,13 @@
         });
     });
 </script>
+
+<!-- -----My service--- -->
 <section class="experince" id="experince"> 
     <div class="services-active">
         <h2 class="heading">My<span> Services</span></h2>
         <div class="service-container">
-            <!-- Material Management -->
+
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-solid fa-warehouse"></i>
@@ -489,7 +479,6 @@
                 <p>Consignment movement tracking for gold recovery</p>
             </div>
 
-            <!-- Stakeholder Management -->
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-solid fa-handshake"></i>
@@ -502,7 +491,7 @@
                 <p>Maintained regular communication with stakeholders to manage expectations and provide timely updates on project progress</p>
             </div>
 
-            <!-- Compliance Management -->
+
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-solid fa-shield-alt"></i>    
@@ -515,7 +504,6 @@
                 <p>Maintained high levels of customer satisfaction by resolving complaints in a way that met the customer's needs and aligned with company policies.</p>
             </div>
 
-            <!-- Mail Merge Skills -->
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-solid fa-envelope"></i>
@@ -528,7 +516,6 @@
                 <p>Streamlined mass email communication by setting up email-based Mail Merge using Outlook</p>
             </div>
 
-            <!-- Web Development 1 -->
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-solid fa-code"></i>
@@ -541,7 +528,6 @@
                 <p>Responsive design implementation for optimal viewing on all devices</p>
             </div>
 
-            <!-- Web Development 2 -->
             <div class="services-box">
                 <div class="icon">
                     <i class="fa-brands fa-react"></i>
@@ -599,7 +585,7 @@
                 </div>
         </div>
     </div>
-    <!-- <h2 class="add"></h2> -->
+    
 </div>
 <form action="#">
     <h2 class="Heading"Contact>Contact<span>  Me</span></h2>
@@ -641,8 +627,5 @@
 
 </form>
 </section>
-<div class="footer">
-    <h3>sathya</h3>
-</div>
 </body>
 </html>
